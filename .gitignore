@@ -1,0 +1,13 @@
+# Dataset (download it from Kaggle, see data/README.md)
+data/raw/*.csv
+
+# Python and Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
