@@ -1,0 +1,29 @@
+{
+  "python": "3.12.3",
+  "sklearn": "1.8.0",
+  "imblearn": "0.14.2",
+  "xgboost": "3.4.1",
+  "random_state": 42,
+  "test_size": 0.2,
+  "features": [
+    "Authority",
+    "Through_pwd",
+    "Through_pin",
+    "Through_MFA",
+    "Data Modification",
+    "Confidential Data Access",
+    "Confidential File Transfer",
+    "File Operation",
+    "Data Sensitivity Level",
+    "External Destination",
+    "hour"
+  ],
+  "tree_params": {
+    "criterion": "entropy",
+    "max_depth": 10,
+    "min_samples_leaf": 20,
+    "random_state": 42
+  },
+  "threshold": 0.4162147474030673,
+  "recall_target": 0.8
+}

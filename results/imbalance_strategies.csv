@@ -1,0 +1,5 @@
+balancer,ap,f1,recall,precision,acc
+class_weight = balanced,0.6203,0.6275,0.7226,0.5547,0.7332
+SMOTEN,0.6011,0.6092,0.6783,0.5534,0.7295
+Random oversampling,0.6121,0.6251,0.7049,0.5617,0.7371
+Random undersampling,0.6101,0.6274,0.7235,0.554,0.7328

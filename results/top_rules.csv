@@ -1,0 +1,6 @@
+rule,IF,events,leakage rate,caught
+1,"Confidential File Transfer = 1 AND External Destination = external AND Authority in {intern, senior manager, staff} AND Through_pwd = 0 AND Data Sensitivity Level in {high, medium} AND hour 00:00-02:59",369,0.61,225
+2,"Confidential File Transfer = 1 AND External Destination = external AND Authority in {lead technician, manager, senior manager, staff} AND File Operation in {delete, read} AND Confidential Data Access = 0 AND hour 09:00-14:59",601,0.35,209
+3,"Confidential File Transfer = 1 AND External Destination = external AND Authority in {intern, manager, senior manager, staff} AND Through_pwd = 0 AND Data Sensitivity Level in {high, medium} AND File Operation in {delete, move, read} AND hour 03:00-04:59",249,0.72,180
+4,"Confidential File Transfer = 1 AND External Destination = external AND Authority in {intern, manager, senior manager, staff} AND Through_pwd = 1 AND Data Modification = 0 AND Data Sensitivity Level in {high, low} AND Through_pin = 0 AND File Operation in {move, read, write} AND hour 00:00-07:59",196,0.65,128
+5,"Confidential File Transfer = 1 AND External Destination = external AND Authority in {lead technician, senior manager, staff} AND File Operation = move AND Confidential Data Access = 0 AND hour 09:00-16:59",316,0.4,126
