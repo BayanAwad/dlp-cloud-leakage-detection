@@ -1,34 +1,56 @@
 # Detecting Data Leakage in Cloud Storage with Interpretable Machine Learning
 
-A leakage-safe re-evaluation and improvement of the decision-tree model from
-Harahap & Hasibuan (2025) for detecting data leakage in cloud storage.
+**Semester Project · Syrian Private University · Faculty of Artificial Intelligence Engineering · Academic Year 2026–2027**
 
-## What this project does
+**Prepared by:** Ghaith Jbili, Bayan Awad, Mohammed Ghazal
+**Supervised by:** Dr. Wassim Janeidi, Eng. Jaafar Mahfouz
 
-- Re-checks the reference paper on the same Kaggle dataset with a strict evaluation:
-  the data are split once, all preprocessing is fitted on training folds only,
-  and the test set is used a single time.
-- Measures the performance ceiling the attributes allow.
-- Tunes an interpretable decision tree and compares it with Random Forest and XGBoost,
-  and class weighting with SMOTEN and random resampling.
-- Chooses an alarm threshold for the security trade-off between missed leaks and false alarms.
-- Explains the model with IF-THEN rules and permutation importance.
+---
 
-## Repository structure
+## 📄 Project Report
+
+### [**➡️ Read the full report (PDF)**](report/Detecting_Data_Leakage_Report.pdf)
+
+The report is the main deliverable of this project. It contains:
+
+| Chapter | Contents |
+|---|---|
+| **Chapter 1: Project Overview and Theoretical Foundations** | Scientific problem and objectives, the reference article and its open questions, related works, cloud storage and data leakage, threat model and MITRE ATT&CK mapping, data loss prevention, decision trees, imbalanced learning, evaluation metrics, methodological data leakage, and the path from model to cloud service |
+| **Chapter 2: Implementation Mechanism and Experimental Results** | Block diagram, flowcharts and pseudo-code, performance ceiling, model comparison, final test evaluation, threshold trade-off, feature importance and interpretable rules |
+
+### Key results (held-out test set, 9,900 events)
+
+| Model | Leakage recall | Precision | F1 | PR-AUC | MCC |
+|---|---|---|---|---|---|
+| Always "normal" (baseline) | 0.000 | – | 0.000 | 0.311 | 0.000 |
+| Reference tree (Harahap & Hasibuan, 2025) | 0.101 | 0.550 | 0.171 | 0.452 | 0.127 |
+| **Our final tree (θ\* = 0.416)** | **0.827** | 0.507 | **0.628** | **0.609** | **0.429** |
+
+Our interpretable decision tree detects about **8 times more leakage events** than the reference model, evaluated with a leakage-safe procedure in which the test set is used only once.
+
+---
+
+## 📊 Seminar Presentation
+
+- [**View the slides (PDF)**](presentation/Detecting_Data_Leakage_Seminar.pdf): opens directly in the browser
+- [Download the PowerPoint file (.pptx)](presentation/Detecting_Data_Leakage_Seminar.pptx)
+
+---
+
+## 💻 Code and Results
 
 | Path | Contents |
 |---|---|
-| `leakage_detection.ipynb` | The full notebook, with outputs |
-| `data/` | Where the Kaggle CSV goes (not included, see `data/README.md`) |
-| `results/` | Result tables (CSV) and figures (PNG) |
-| `models/final_tree.joblib` | Trained pipeline with its alarm threshold |
-| `docs/` | Code walkthrough and simple guides (English and Arabic) |
-| `requirements.txt` | Python packages |
+| [`leakage_detection.ipynb`](leakage_detection.ipynb) | The full notebook, with outputs |
+| [`results/`](results/) | Result tables (CSV) and figures (PNG) |
+| [`models/final_tree.joblib`](models/) | Trained pipeline with its alarm threshold |
+| [`docs/`](docs/) | Code walkthrough and simple guides (English and Arabic) |
+| [`data/`](data/) | Where the Kaggle CSV goes (not included, see [`data/README.md`](data/README.md)) |
+| [`requirements.txt`](requirements.txt) | Python packages |
 
-## How to run
+### How to run
 
-**Google Colab (easiest):** open `leakage_detection.ipynb` in Colab, run the first cell,
-upload `Data_Leakage_Detection.csv` when asked, then use *Runtime > Run all*.
+**Google Colab (easiest):** open `leakage_detection.ipynb` in Colab, run the first cell, upload `Data_Leakage_Detection.csv` when asked, then use *Runtime > Run all*.
 
 **Locally:**
 
@@ -42,12 +64,10 @@ jupyter notebook leakage_detection.ipynb
 
 A full run takes about 15 to 20 minutes.
 
-## Tools
+**Tools:** Python, pandas, scikit-learn, imbalanced-learn, XGBoost, matplotlib, Google Colab.
 
-Python, pandas, scikit-learn, imbalanced-learn, XGBoost, matplotlib, Google Colab.
+---
 
-## Reference
+## Reference article
 
-Harahap, P., & Hasibuan, M. S. (2025). Detecting Data Leakage in Cloud Storage Using Decision Tree
-Classification. *Journal of Information Systems and Informatics*, 7(3).
-https://doi.org/10.51519/journalisi.v7i3.1215
+P. Harahap and M. S. Hasibuan, "Detecting data leakage in cloud storage using decision tree classification," *Journal of Information Systems and Informatics*, vol. 7, no. 3, pp. 2516–2534, Sep. 2025, doi: [10.51519/journalisi.v7i3.1215](https://doi.org/10.51519/journalisi.v7i3.1215).
