@@ -26,7 +26,7 @@ The report is the main deliverable of this project. It contains:
 | Reference tree (Harahap & Hasibuan, 2025) | 0.101 | 0.550 | 0.171 | 0.452 | 0.127 |
 | **Our final tree (θ\* = 0.416)** | **0.827** | 0.507 | **0.628** | **0.609** | **0.429** |
 
-Our interpretable decision tree detects about **8 times more leakage events** than the reference model, evaluated with a leakage-safe procedure in which the test set is used only once.
+Our interpretable decision tree detects about **8 times more leakage events** than the reference model, evaluated with a leakage-safe procedure in which the test set is used only once. Even against the article’s tree read with integer codes (as its published splits imply), which reaches recall 0.298 on the same test set, the final tree catches about **2.8 times** as many leakage events.
 
 ---
 
@@ -34,6 +34,12 @@ Our interpretable decision tree detects about **8 times more leakage events** th
 
 - [**View the slides (PDF)**](presentation/Detecting_Data_Leakage_Seminar.pdf): opens directly in the browser
 - [Download the PowerPoint file (.pptx)](presentation/Detecting_Data_Leakage_Seminar.pptx)
+
+---
+
+## 🧪 Practical Summary (Arabic)
+
+- [**ملخّص القسم العملي — Practical Summary (PDF, Arabic)**](practical/Practical_Summary_AR.pdf): a short summary of the practical work: the idea, the data, the training process and the results.
 
 ---
 
